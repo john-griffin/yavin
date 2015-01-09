@@ -47,5 +47,9 @@ module.exports = function(environment) {
     authorizer: 'simple-auth-authorizer:devise'
   }
 
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint: '/api/v1/sessions'
+  }
+
   return ENV;
 };

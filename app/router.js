@@ -10,6 +10,8 @@ Router.map(function() {
   this.resource("crawls", function() {
     this.route("show", {
       path: ":crawl_id"
+    }, function() {
+      this.resource("stops", function() {});
     });
   });
 });

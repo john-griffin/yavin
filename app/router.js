@@ -7,6 +7,11 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
+  this.resource("crawls", function() {
+    this.route("show", {
+      path: ":crawl_id"
+    });
+  });
 });
 
 export default Router;

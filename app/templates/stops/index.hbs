@@ -1,3 +1,9 @@
 {{#each stop in model}}
-  <p>{{stop.name}} ({{stop.venue.name}})</p>
+  <h3>{{stop.name}}</h3>
+  <h4>{{stop.venue.name}}</h4>
+  <p>{{stop.venue.description}}</p>
+  <p>{{stop.venue.location}}</p>
+  <p>
+    <img {{bind-attr src=stop.venue.photoUrl}}>
+  </p>
 {{/each}}

@@ -14,7 +14,18 @@ export default DS.RESTAdapter.extend({
     hash.data.v = '20150113';
     return this._super(url, type, hash);
   },
-  pathForType: function() {
-    return 'venues/search';
+  pathForType: function(type) {
+    if (type === 'venues/search') {
+      return type;
+    }
+    return this._super(type);
+  },
+  buildURL: function(type, id, record) {
+    if (id) { // show action
+      type = 'venue';
+    } else {  // search action
+      type = 'venues/search';
+    }
+    return this._super(type, id, record);
   }
 });

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -9,6 +10,7 @@ export default DS.Model.extend({
   shortUrl: DS.attr('string'),
   ratingColor: DS.attr('string'),
   timeZone: DS.attr('string'),
+  description: DS.attr('string'),
   contact: DS.attr('hash'),
   location: DS.attr('hash'),
   stats: DS.attr('hash'),
@@ -41,5 +43,12 @@ export default DS.Model.extend({
   like: DS.attr('boolean', { defaultValue: false }),
   dislike: DS.attr('boolean', { defaultValue: false }),
   ok: DS.attr('boolean', { defaultValue: false }),
-  categories: DS.hasMany('fq-category')
+  categories: DS.hasMany('fq-category'),
+  firstPhoto: Ember.computed('photos', function(){
+    var photos = this.get('photos');
+    if (photos) {
+      var photo = photos.groups[0].items[0];
+      return photo.prefix + 'width300' + photo.suffix;
+    }
+  })
 });

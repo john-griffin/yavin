@@ -43,6 +43,11 @@ module.exports = function(environment) {
 
   }
 
+  ENV.contentSecurityPolicy = {
+    "connect-src": "'self' https://api.foursquare.com",
+    "img-src": "*"
+  };
+
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise'
   }

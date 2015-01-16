@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('transform:hash', 'HashTransform', {
+moduleFor('transform:raw', 'RawTransform', {
   // Specify the other units that are required for this test.
   // needs: ['serializer:foo']
 });

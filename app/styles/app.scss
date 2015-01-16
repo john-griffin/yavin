@@ -1,3 +1,16 @@
 @import "settings";
 
 @import "foundation";
+
+.unformatted-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.venue-list {
+  padding: 0;
+}
+
+.search-bar label, .search-bar input {
+  margin: 0;
+}

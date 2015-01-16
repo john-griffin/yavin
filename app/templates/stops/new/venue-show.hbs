@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-2 columns">
+    {{#link-to 'stops.new.venue_search' class="prefix button secondary"}}
+      Change Venue
+    {{/link-to}}
+  </div>
+  <div class="small-10 columns">
+    <input type="text" disabled {{bind-attr value=model.name}}>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-2 columns">
+    <img {{bind-attr src=model.firstPhoto}}>
+  </div>
+  <div class="small-10 columns">
+    {{#if model.description}}
+      <p>{{model.description}}</p>
+    {{/if}}
+    <ul class="unformatted-list">
+      {{#each line in model.location.formattedAddress}}
+        <li>{{line}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+

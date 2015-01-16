@@ -11,7 +11,14 @@ Router.map(function() {
     this.route("show", {
       path: ":crawl_id"
     }, function() {
-      this.resource("stops", function() {});
+      this.resource("stops", function() {
+        this.route("new", function() {
+          this.route("venue_search");
+          this.route("venue_show", {
+            path: "venue_show/:venue_id"
+          });
+        });
+      });
     });
   });
 });

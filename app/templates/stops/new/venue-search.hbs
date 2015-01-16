@@ -1,0 +1,22 @@
+<div class="row search-bar">
+  <div class="small-2 columns">
+    <label for="right-label" class="inline right">Venue search</label>
+  </div>
+  <div class="small-10 columns">
+    {{input value=query class="foursquare-search" placeholder="Venue search..."}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-10 small-offset-2 columns">
+    <ul class="side-nav venue-list">
+      {{#each venue in model}}
+        <li>
+          {{#link-to 'stops.new.venue_show' venue.id}}
+            {{venue.name}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

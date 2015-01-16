@@ -5,7 +5,7 @@ import {
 
 moduleFor('controller:stops/new', 'StopsNewController', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['controller:stops/new/venue-show']
 });
 
 // Replace this with your real tests.

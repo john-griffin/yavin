@@ -5,7 +5,7 @@ import {
 
 moduleForModel('crawl', 'Crawl', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:stop']
 });
 
 test('it exists', function() {

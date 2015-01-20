@@ -9,12 +9,15 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" {{bind-attr class="errorMessage:error"}}>
   <div class="small-2 columns">
     <label class="inline right">Select photo</label>
   </div>
   <div class="small-10 columns">
     {{photo-select items=model.photos action='photoSelected'}}
+    {{#if errorMessage}}
+      <small class="error">{{errorMessage}}</small>
+    {{/if}}
   </div>
 </div>
 <div class="row">

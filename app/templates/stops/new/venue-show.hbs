@@ -11,7 +11,14 @@
 
 <div class="row">
   <div class="small-2 columns">
-    <img {{bind-attr src=model.firstPhoto}}>
+    <label class="inline right">Select photo</label>
+  </div>
+  <div class="small-10 columns">
+    {{photo-select items=model.photos action='photoSelected'}}
+  </div>
+</div>
+<div class="row">
+  <div class="small-2 columns">
   </div>
   <div class="small-10 columns">
     {{#if model.description}}

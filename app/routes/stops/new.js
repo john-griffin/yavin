@@ -8,12 +8,15 @@ export default Ember.Route.extend({
       var fqVenue = this.modelFor('stops/new/venue-show');
       stop.set('venueName',    fqVenue.get('name'));
       stop.set('description',  fqVenue.get('description'));
-      stop.set('photoUrl',     fqVenue.get('firstPhoto'));
       stop.set('location',     fqVenue.get('location').formattedAddress);
       stop.set('foursquareId', fqVenue.get('id'));
       stop.save().then(function(){
         _this.transitionTo('stops');
       });
+    },
+    photoSelected: function(photo) {
+      var stop = this.modelFor('stops/new');
+      stop.set('photoUrl', photo.get('url'));
     }
   },
   model: function() {

@@ -1,7 +1,8 @@
-import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  categories: DS.hasMany('fq-category'),
+  photos: DS.hasMany('fq-photo'),
   name: DS.attr('string'),
   referralId: DS.attr('string'),
   url: DS.attr('string'),
@@ -22,7 +23,6 @@ export default DS.Model.extend({
   specials: DS.attr('raw'),
   price: DS.attr('raw'),
   likes: DS.attr('raw'),
-  photos: DS.attr('raw'),
   reasons: DS.attr('raw'),
   page: DS.attr('raw'),
   mayor: DS.attr('raw'),
@@ -42,13 +42,5 @@ export default DS.Model.extend({
   verified: DS.attr('boolean', { defaultValue: false }),
   like: DS.attr('boolean', { defaultValue: false }),
   dislike: DS.attr('boolean', { defaultValue: false }),
-  ok: DS.attr('boolean', { defaultValue: false }),
-  categories: DS.hasMany('fq-category'),
-  firstPhoto: Ember.computed('photos', function(){
-    var photos = this.get('photos');
-    if (photos) {
-      var photo = photos.groups[0].items[0];
-      return photo.prefix + 'width300' + photo.suffix;
-    }
-  })
+  ok: DS.attr('boolean', { defaultValue: false })
 });

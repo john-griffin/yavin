@@ -1,0 +1,15 @@
+<ul class="small-block-grid-6">
+  {{#each photo in photos}}
+    <li {{bind-attr class="photo.isSelected:selected"}}>
+      <div class="photo-select" {{action 'click' photo}}>
+        <img {{bind-attr src=photo.url class=":th"}}>
+        {{#if photo.isSelected}}
+          {{fa-icon "fa-check-circle" classNames="select-icon" size=2}}
+        {{else}}
+          {{fa-icon "fa-circle-o" classNames="select-icon" size=2}}
+        {{/if}}
+      </div>
+    </li>
+  {{/each}}
+</ul>
+

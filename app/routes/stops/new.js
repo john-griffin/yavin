@@ -10,6 +10,7 @@ export default Ember.Route.extend({
       stop.set('description',  fqVenue.get('description'));
       stop.set('location',     fqVenue.get('location').formattedAddress);
       stop.set('foursquareId', fqVenue.get('id'));
+      stop.set('rowOrderPosition', 'last');
       stop.save().then(function(){
         _this.transitionTo('stops');
       });

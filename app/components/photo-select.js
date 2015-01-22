@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  items: [],
   photos: Ember.computed('items', 'selected', function(){
     var selected = this.get('selected');
     return this.get('items').map(function(item){

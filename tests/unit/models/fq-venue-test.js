@@ -5,7 +5,7 @@ import {
 
 moduleForModel('fq-venue', 'FqVenue', {
   // Specify the other units that are required for this test.
-  needs: ['model:fq-category']
+  needs: ['model:fq-category', 'model:fq-photo']
 });
 
 test('it exists', function() {

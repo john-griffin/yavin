@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  hasPhotoUrl: Ember.computed.notEmpty('photoUrl'),
-  isValid: Ember.computed.and('hasPhotoUrl'),
+  hasPhotoId: Ember.computed.notEmpty('photoId'),
+  isValid: Ember.computed.and('hasPhotoId'),
   actions: {
     photoSelected: function(photo) {
-      this.set('photoUrl', photo.get('url'));
+      this.set('photoId', photo.get('id'));
       this.set('errorMessage', null);
       return true;
     }

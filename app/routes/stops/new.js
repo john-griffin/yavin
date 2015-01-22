@@ -17,7 +17,9 @@ export default Ember.Route.extend({
     },
     photoSelected: function(photo) {
       var stop = this.modelFor('stops/new');
-      stop.set('photoUrl', photo.get('url'));
+      stop.set('photoId', photo.get('id'));
+      stop.set('photoPrefix', photo.get('prefix'));
+      stop.set('photoSuffix', photo.get('suffix'));
     }
   },
   model: function() {

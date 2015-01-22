@@ -9,6 +9,9 @@ export default Ember.Route.extend({
     moveStop: function(stop, direction){
       stop.set('rowOrderPosition', direction);
       stop.save();
+    },
+    delete: function(stop) {
+      stop.destroyRecord();
     }
   }
 });

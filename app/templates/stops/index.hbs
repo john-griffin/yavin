@@ -12,6 +12,9 @@
       <button class="button expand" {{action 'moveStop' stop 'down'}}>
         {{fa-icon "fa-arrow-down" size=2}}
       </button>
+      <button class="button expand alert" {{action 'delete' stop}}>
+        {{fa-icon "fa-times" size=2}}
+      </button>
     </div>
     <div class="small-3 large-3 columns">
       <img {{bind-attr src=stop.photoUrl}}>

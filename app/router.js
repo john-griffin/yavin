@@ -12,7 +12,7 @@ Router.map(function() {
       path: ":crawl_id"
     }, function() {
       this.resource("stops", function() {
-        this.route("new", function() {
+        this.route("new", { path: ':stop_id' }, function() {
           this.resource("venues", function() {
             this.route("show", {
               path: ":venue_id"

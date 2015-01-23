@@ -21,14 +21,21 @@ export default Ember.Route.extend({
       stop.set('photoSuffix', photo.get('suffix'));
     }
   },
-  model: function() {
-    return this.store.createRecord('stop', {
-      crawl: this.modelFor('crawls/show')
-    });
+  model: function(params, transition, queryParams) {
+    if (params.stop_id === "new") {
+      return this.store.createRecord('stop', {
+        crawl: this.modelFor('crawls/show')
+      });
+    }
+    return this._super(params, transition, queryParams);
   },
-  beforeModel: function(transition) {
+  redirect: function(model, transition){
     if (transition.targetName === 'stops.new.index') {
-      this.transitionTo('venues');
+      if (model.get('isNew')) {
+        this.transitionTo('venues');
+      } else {
+        this.transitionTo('venues.show', model.get('foursquareId'));
+      }
     }
   },
   deactivate: function(){

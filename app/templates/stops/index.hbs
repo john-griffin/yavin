@@ -15,6 +15,9 @@
       <button class="button expand alert" {{action 'delete' stop}}>
         {{fa-icon "fa-times" size=2}}
       </button>
+      {{#link-to 'venues.show' stop stop.foursquareId}}
+        Edit
+      {{/link-to}}
     </div>
     <div class="small-3 large-3 columns">
       <img {{bind-attr src=stop.photoUrl}}>

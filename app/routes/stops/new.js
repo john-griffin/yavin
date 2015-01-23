@@ -2,9 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   actions: {
-    saveStop: function(){
+    saveStop: function(stop){
       var _this = this;
-      var stop = this.modelFor('stops/new');
       var fqVenue = this.modelFor('stops/new/venue-show');
       stop.set('venueName',    fqVenue.get('name'));
       stop.set('description',  fqVenue.get('description'));

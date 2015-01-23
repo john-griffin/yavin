@@ -14,7 +14,7 @@
     <label class="inline right">Select photo</label>
   </div>
   <div class="small-10 columns">
-    {{photo-select items=model.photos action='photoSelected'}}
+    {{photo-select items=model.photos selected=photoId action='photoSelected'}}
     {{#if errorMessage}}
       <small class="error">{{errorMessage}}</small>
     {{/if}}

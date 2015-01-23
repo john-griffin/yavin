@@ -10,11 +10,11 @@ export default Ember.Route.extend({
     }
   },
   afterModel: function() {
-    var stop = this.modelFor('stops/new');
+    var stop = this.modelFor('stops.new');
     this.set('stop', stop);
   },
   setupController: function(controller, post) {
-    controller.set('stop', this.get('stop'));
+    controller.set('photoId', this.get('stop.photoId'));
     this._super(controller, post);
   }
 });

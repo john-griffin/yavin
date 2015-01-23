@@ -13,5 +13,5 @@ export default Ember.Route.extend({
       venues = this.store.find('fq-venue', params);
     }
     return venues;
-  },
+  }
 });

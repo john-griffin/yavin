@@ -13,9 +13,10 @@ Router.map(function() {
     }, function() {
       this.resource("stops", function() {
         this.route("new", function() {
-          this.route("venue_search");
-          this.route("venue_show", {
-            path: "venue_show/:venue_id"
+          this.resource("venues", function() {
+            this.route("show", {
+              path: ":venue_id"
+            });
           });
         });
       });

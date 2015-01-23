@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   actions: {
     saveStop: function(stop){
       var _this = this;
-      var fqVenue = this.modelFor('stops/new/venue-show');
+      var fqVenue = this.modelFor('venues/show');
       stop.set('venueName',    fqVenue.get('name'));
       stop.set('description',  fqVenue.get('description'));
       stop.set('location',     fqVenue.get('location').formattedAddress);
@@ -28,7 +28,7 @@ export default Ember.Route.extend({
   },
   beforeModel: function(transition) {
     if (transition.targetName === 'stops.new.index') {
-      this.transitionTo('stops.new.venue_search');
+      this.transitionTo('venues');
     }
   },
   deactivate: function(){

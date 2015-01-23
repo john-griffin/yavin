@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['stops/new/venue-show'],
+  needs: ['venues/show'],
   hasName: Ember.computed.notEmpty('model.name'),
   isValid: Ember.computed.and('hasName'),
   actions: {
     saveStop: function(){
       this.set('errorMessage', null); // clear existing errors
-      var venueController = this.get('controllers.stops/new/venue-show');
+      var venueController = this.get('controllers.venues/show');
       if (venueController.checkValid()) {
         if (this.get('isValid')) {
           return true;

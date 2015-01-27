@@ -12,8 +12,15 @@ Router.map(function() {
       path: ":crawl_id"
     }, function() {
       this.resource("stops", function() {
-        this.route("new", { path: ':stop_id' }, function() {
-          this.resource("venues", function() {
+        this.route("new", function() {
+          this.resource("venues.new", {path: 'venues'}, function() {
+            this.route("show", {
+              path: ":venue_id"
+            });
+          });
+        });
+        this.route("edit", {path: ':stop_id/edit'}, function() {
+          this.resource("venues.edit", {path: 'venues'}, function() {
             this.route("show", {
               path: ":venue_id"
             });

@@ -45,6 +45,7 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     "connect-src": "'self' https://api.foursquare.com",
+    "style-src": "'self' 'unsafe-inline'",
     "img-src": "*"
   };
 

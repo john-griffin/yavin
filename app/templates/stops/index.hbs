@@ -1,35 +1,37 @@
 {{#each stop in controller}}
-  <div class="row">
-    <div class="small-offset-4 small-8 large-offset-4 large-8 columns">
-      <h3>{{stop.name}}</h3>
+  <div class="stop">
+    <div class="row">
+      <div class="small-offset-4 small-8 large-offset-4 large-8 columns">
+        <h3>{{stop.name}}</h3>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="small-1 columns">
-      <button class="button expand" {{action 'moveStop' stop 'up'}}>
-        {{fa-icon "fa-arrow-up" size=2}}
-      </button>
-      <button class="button expand" {{action 'moveStop' stop 'down'}}>
-        {{fa-icon "fa-arrow-down" size=2}}
-      </button>
-      <button class="button expand alert" {{action 'delete' stop}}>
-        {{fa-icon "fa-times" size=2}}
-      </button>
-      {{#link-to 'venues.edit' stop}}
-        Edit
-      {{/link-to}}
-    </div>
-    <div class="small-3 large-3 columns">
-      <img {{bind-attr src=stop.photoUrl}}>
-    </div>
-    <div class="small-8 large-8 columns">
-      <h4>{{stop.venueName}}</h4>
-      <p>{{stop.description}}</p>
-      <ul class="unformatted-list">
-        {{#each line in stop.location}}
-          <li>{{line}}</li>
-        {{/each}}
-      </ul>
+    <div class="row">
+      <div class="small-1 columns">
+        <button class="button expand" {{action 'moveStop' stop 'up'}}>
+          {{fa-icon "fa-arrow-up" size=2}}
+        </button>
+        <button class="button expand" {{action 'moveStop' stop 'down'}}>
+          {{fa-icon "fa-arrow-down" size=2}}
+        </button>
+        <button class="button expand alert" {{action 'delete' stop}}>
+          {{fa-icon "fa-times" size=2}}
+        </button>
+        {{#link-to 'venues.edit' stop}}
+          Edit
+        {{/link-to}}
+      </div>
+      <div class="small-3 large-3 columns">
+        <img {{bind-attr src=stop.photoUrl}}>
+      </div>
+      <div class="small-8 large-8 columns">
+        <h4 class="venue-name">{{stop.venueName}}</h4>
+        <p>{{stop.description}}</p>
+        <ul class="unformatted-list">
+          {{#each line in stop.location}}
+            <li>{{line}}</li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
   </div>
 {{/each}}

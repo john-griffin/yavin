@@ -15,7 +15,9 @@ module('Acceptance: Stops', {
     };
 
     server.unhandledRequest = function(verb, path) {
+      console.error("Unhandled request", verb, path);
       assert.ok(false, "Request not handled: " + verb + " " + path);
+      throw new Error("Unhandled request " + verb + path);
     };
   },
   teardown: function() {

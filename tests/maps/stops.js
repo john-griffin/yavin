@@ -67,4 +67,16 @@ export default function(){
   this.get('/api/v1/stops', function(){
     return [200, {"Content-Type": "application/json"}, { "stops": stops }];
   });
+  this.put('/api/v1/stops/:id', function(req){
+    var stop = stops.findBy('id', parseInt(req.params.id));
+    var idx = stops.indexOf(stop);
+    if (stop.id === 73) {
+      stop.row_order = 25;
+    } else if (stop.id === 75) {
+      stop.row_order = 22;
+    }
+    return [200, {"Content-Type": "application/json"}, {
+      "stop": stop
+    }];
+  });
 }

@@ -34,4 +34,11 @@ test('visiting stops for a crawl', function() {
     equal(results[1].textContent, "The Donut Pub");
     equal(results[2].textContent, "Twins Pub");
   });
+  click('.button.down:first');
+  click('.button.up:last').then(function() {
+    var results = find('.venue-name');
+    equal(results[0].textContent, "The Donut Pub");
+    equal(results[1].textContent, "Twins Pub");
+    equal(results[2].textContent, "O'Reilly's Irish Pub");
+  });
 });

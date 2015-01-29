@@ -27,9 +27,7 @@ module('Acceptance: Stops', {
 });
 
 test('visiting stops for a crawl', function() {
-  visit('/crawls/1/stops');
-
-  andThen(function() {
+  visit('/crawls/1/stops').then(function(){
     equal(find('.stop').length, 3, "Page contains list of stops");
     equal(find('.venue-name').first().text(), "O'Reilly's Irish Pub");
   });

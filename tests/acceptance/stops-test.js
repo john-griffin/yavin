@@ -29,6 +29,9 @@ module('Acceptance: Stops', {
 test('visiting stops for a crawl', function() {
   visit('/crawls/1/stops').then(function(){
     equal(find('.stop').length, 3, "Page contains list of stops");
-    equal(find('.venue-name').first().text(), "O'Reilly's Irish Pub");
+    var results = find('.venue-name');
+    equal(results[0].textContent, "O'Reilly's Irish Pub");
+    equal(results[1].textContent, "The Donut Pub");
+    equal(results[2].textContent, "Twins Pub");
   });
 });

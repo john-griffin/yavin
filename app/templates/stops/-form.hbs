@@ -3,7 +3,7 @@
     <label class="inline right">Stop name</label>
   </div>
   <div class="small-10 columns">
-    {{input value=model.name placeholder="Stop name"}}
+    {{input value=model.name placeholder="Stop name" id="stop-name"}}
     {{#if errorMessage}}
       <small class="error">{{errorMessage}}</small>
     {{/if}}
@@ -14,6 +14,6 @@
 
 <div class="row">
   <div class="small-10 small-offset-2 columns">
-    <button {{action 'saveStop' model}}>Save Stop</button>
+    <button {{action 'saveStop' model}} class="save">Save Stop</button>
   </div>
 </div>

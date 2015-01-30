@@ -52,6 +52,24 @@ var stops = [
   }
 ];
 
+var galwayStop = {
+  "id": 77,
+  "crawl_id": 1,
+  "row_order": 7208960,
+  "name": "Additional stop",
+  "venue_name": "Galway Pub",
+  "description": null,
+  "photo_id": "4dd93ae540a39dd5c93d696e",
+  "photo_prefix": "https://irs2.4sqi.net/img/general/",
+  "photo_suffix": "/X15N3CIRVZJTOZT34VWP5Q1OMXYDIQEGQNCPKU3X4LUUIOI1.jpg",
+  "location": [
+    "7 E 36th St (btwn Madison & 5th Ave)",
+    "New York, NY 10016",
+    "United States"
+  ],
+  "foursquare_id": "48821a51f964a52033511fe3"
+};
+
 export default function(){
   this.get('/api/v1/crawls/1', function(){
     return [200, {"Content-Type": "application/json"}, {
@@ -66,6 +84,10 @@ export default function(){
   });
   this.get('/api/v1/stops', function(){
     return [200, {"Content-Type": "application/json"}, { "stops": stops }];
+  });
+  this.post('/api/v1/stops', function(){
+    stops.push(galwayStop);
+    return [200, {"Content-Type": "application/json"}, { "stop": galwayStop }];
   });
   this.put('/api/v1/stops/:id', function(req){
     var stop = stops.findBy('id', parseInt(req.params.id));

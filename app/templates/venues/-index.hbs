@@ -12,7 +12,7 @@
     <ul class="side-nav venue-list">
       {{#each venue in model}}
         <li>
-          {{#link-to showRouteName venue.id}}
+          {{#link-to showRouteName venue.id class='venue-link'}}
             {{venue.name}}
           {{/link-to}}
         </li>

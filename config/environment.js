@@ -19,6 +19,9 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.FS_API_HOST = 'https://api.foursquare.com';
+  ENV.FS_API_NS   = 'v2';
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -37,6 +40,9 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.FS_API_HOST = null;
+    ENV.FS_API_NS   = 'foursquare_api_v2';
   }
 
   if (environment === 'production') {

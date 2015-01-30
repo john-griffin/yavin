@@ -1,8 +1,10 @@
 import Ember from 'ember';
 import DS from 'ember-data';
+import config from "../config/environment";
 
 export default DS.RESTAdapter.extend({
-  host: 'https://api.foursquare.com/v2',
+  host:      config.FS_API_HOST,
+  namespace: config.FS_API_NS,
   ajax: function(url, type, hash) {
     if (Ember.isEmpty(hash)) {
       hash = {};

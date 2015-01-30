@@ -89,6 +89,12 @@ export default function(){
     stops.push(galwayStop);
     return [200, {"Content-Type": "application/json"}, { "stop": galwayStop }];
   });
+  this.get('/api/v1/stops/:id', function(req){
+    var stop = stops.findBy('id', parseInt(req.params.id));
+    return [200, {"Content-Type": "application/json"}, {
+      "stop": stop
+    }];
+  });
   this.put('/api/v1/stops/:id', function(req){
     var stop = stops.findBy('id', parseInt(req.params.id));
     var idx = stops.indexOf(stop);

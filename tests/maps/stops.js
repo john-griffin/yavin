@@ -96,11 +96,12 @@ export default function(){
     }];
   });
   this.put('/api/v1/stops/:id', function(req){
+    var reqBody = JSON.parse(req.requestBody);
     var stop = stops.findBy('id', parseInt(req.params.id));
     var idx = stops.indexOf(stop);
-    if (stop.id === 73) {
+    if (reqBody.stop.row_order_position === 'down') {
       stop.row_order = 25;
-    } else if (stop.id === 75) {
+    } else if (reqBody.stop.row_order_position === 'up') {
       stop.row_order = 22;
     }
     return [200, {"Content-Type": "application/json"}, {

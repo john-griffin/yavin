@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import startApp from '../helpers/start-app';
-import Pretender from 'pretender';
+import Pretender from '../helpers/pretender';
 import sessionMaps from "../maps/sessions";
 
 var application, server;
@@ -8,21 +8,11 @@ var application, server;
 module('Acceptance: Login', {
   setup: function(assert) {
     application = startApp();
-    server = new Pretender(sessionMaps);
-
-    server.prepareBody = function(body){
-      return body ? JSON.stringify(body) : null;
-    };
-
-    server.unhandledRequest = function(verb, path) {
-      console.error("Unhandled request", verb, path);
-      assert.ok(false, "Request not handled: " + verb + " " + path);
-      throw new Error("Unhandled request " + verb + path);
-    };
+    server = new Pretender(assert);
+    server.map(sessionMaps);
   },
   teardown: function() {
     Ember.run(application, 'destroy');
-    server.shutdown();
   }
 });
 

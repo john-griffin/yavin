@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import startApp from '../helpers/start-app';
-import Pretender from 'pretender';
+import Pretender from '../helpers/pretender';
 import stopMaps from "../maps/stops-edit";
 import venueMaps from "../maps/foursquare-venues";
 
@@ -9,21 +9,12 @@ var application, server;
 module('Acceptance: Stops', {
   setup: function(assert) {
     application = startApp();
-    server = new Pretender(stopMaps, venueMaps);
-
-    server.prepareBody = function(body){
-      return body ? JSON.stringify(body) : null;
-    };
-
-    server.unhandledRequest = function(verb, path) {
-      console.error("Unhandled request", verb, path);
-      assert.ok(false, "Request not handled: " + verb + " " + path);
-      throw new Error("Unhandled request " + verb + path);
-    };
+    server = new Pretender(assert);
+    server.map(stopMaps);
+    server.map(venueMaps);
   },
   teardown: function() {
     Ember.run(application, 'destroy');
-    server.shutdown();
   }
 });
 

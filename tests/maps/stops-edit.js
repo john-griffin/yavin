@@ -58,6 +58,7 @@ export default function(){
       "crawl": {
         "id": 1,
         "name": "Monopoly",
+        "user_id": 1,
         "links": {
           "stops": "/api/v1/stops?crawl_id=1"
         }

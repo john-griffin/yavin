@@ -3,8 +3,8 @@
 </p>
 <form {{action 'authenticate' on='submit'}}>
   <label for="identification">Login</label>
-  {{input value=identification placeholder='Enter Login'}}
+  {{input value=identification placeholder='Enter Login' class='email'}}
   <label for="password">Password</label>
-  {{input value=password placeholder='Enter Password' type='password'}}
-  <button type="submit">Login</button>
+  {{input value=password placeholder='Enter Password' type='password' class='password'}}
+  <button type="submit" class='login'>Login</button>
 </form>

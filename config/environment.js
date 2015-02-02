@@ -43,6 +43,10 @@ module.exports = function(environment) {
 
     ENV.FS_API_HOST = null;
     ENV.FS_API_NS   = 'foursquare_api_v2';
+
+    ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:ephemeral'
+    }
   }
 
   if (environment === 'production') {

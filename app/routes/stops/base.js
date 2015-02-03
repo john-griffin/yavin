@@ -2,6 +2,13 @@ import Ember from 'ember';
 import AuthRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthRouteMixin, {
+  beforeModel: function(){
+    // for some reason the id sometimes comes back as a string
+    var ownerId = parseInt(this.modelFor('crawls/show').get("id"));
+    if (ownerId !== this.get("session.id")) {
+      this.transitionTo('login');
+    }
+  },
   actionName: Ember.computed('routeName', function(){
     return this.get('routeName').split('.')[1];
   }),

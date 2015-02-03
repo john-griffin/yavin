@@ -12,6 +12,7 @@ module('Acceptance: Stops', {
     server = new Pretender(assert);
     server.map(stopMaps);
     server.map(venueMaps);
+    invalidateSession();
   },
   teardown: function() {
     Ember.run(application, 'destroy');
@@ -20,7 +21,6 @@ module('Acceptance: Stops', {
 
 test('visiting stops for a crawl unauthenticated', function() {
   visit('/crawls/1/stops').then(function(){
-    invalidateSession();
     equal(find('.stop').length, 3, "Page contains list of stops");
     var results = find('.venue-name');
     equal(results[0].textContent, "O'Reilly's Irish Pub");
@@ -57,7 +57,24 @@ test('reorder stops as crawl owner', function() {
   });
 });
 
-test('adding a stop', function() {
+test('cannot add stop while unauthenticated', function() {
+  visit('/crawls/1/stops/new').then(function(){
+    equal(currentURL(), '/login');
+  });
+});
+
+test('cannot add stop as other user', function() {
+  authenticateSession();
+  currentSession().set('id', 2);
+  visit('/crawls/1/stops/new').then(function(){
+    equal(currentURL(), '/login');
+  });
+});
+
+
+test('adding a stop as owner', function() {
+  authenticateSession();
+  currentSession().set('id', 1);
   visit('/crawls/1/stops/new').then(function(){
     equal(currentURL(), '/crawls/1/stops/new/venues');
     fillIn('#stop-name', 'Additional stop');

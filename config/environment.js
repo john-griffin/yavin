@@ -30,6 +30,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise'
+  }
+
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
@@ -44,9 +48,7 @@ module.exports = function(environment) {
     ENV.FS_API_HOST = null;
     ENV.FS_API_NS   = 'foursquare_api_v2';
 
-    ENV['simple-auth'] = {
-      store: 'simple-auth-session-store:ephemeral'
-    }
+    ENV['simple-auth'].store = 'simple-auth-session-store:ephemeral';
   }
 
   if (environment === 'production') {
@@ -58,10 +60,6 @@ module.exports = function(environment) {
     "style-src": "'self' 'unsafe-inline'",
     "img-src": "*"
   };
-
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise'
-  }
 
   ENV['simple-auth-devise'] = {
     tokenAttributeName: 'authentication_token',

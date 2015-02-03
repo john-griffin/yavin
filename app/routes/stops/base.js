@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import AuthRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(AuthRouteMixin, {
   actionName: Ember.computed('routeName', function(){
     return this.get('routeName').split('.')[1];
   }),

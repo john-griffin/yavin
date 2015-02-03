@@ -7,18 +7,20 @@
     </div>
     <div class="row">
       <div class="small-1 columns">
-        <button class="button expand up" {{action 'moveStop' stop 'up'}}>
-          {{fa-icon "fa-arrow-up" size=2}}
-        </button>
-        <button class="button expand down" {{action 'moveStop' stop 'down'}}>
-          {{fa-icon "fa-arrow-down" size=2}}
-        </button>
-        <button class="button expand alert" {{action 'delete' stop}}>
-          {{fa-icon "fa-times" size=2}}
-        </button>
-        {{#link-to 'venues.edit' stop}}
-          Edit
-        {{/link-to}}
+        {{#if controller.isOwner}}
+          <button class="button expand up" {{action 'moveStop' stop 'up'}}>
+            {{fa-icon "fa-arrow-up" size=2}}
+          </button>
+          <button class="button expand down" {{action 'moveStop' stop 'down'}}>
+            {{fa-icon "fa-arrow-down" size=2}}
+          </button>
+          <button class="button expand alert" {{action 'delete' stop}}>
+            {{fa-icon "fa-times" size=2}}
+          </button>
+          {{#link-to 'venues.edit' stop class='edit'}}
+            Edit
+          {{/link-to}}
+        {{/if}}
       </div>
       <div class="small-3 large-3 columns">
         <img {{bind-attr src=stop.photoUrl}}>

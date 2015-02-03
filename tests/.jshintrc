@@ -2,6 +2,7 @@
   "predef": [
     "authenticateSession",
     "invalidateSession",
+    "currentSession",
     "document",
     "window",
     "location",

@@ -12,6 +12,7 @@
     "ember-load-initializers": "ember-cli/ember-load-initializers#0.0.2",
     "ember-simple-auth": "0.7.2",
     "foundation": "~5.5.0",
+    "bourbon": "3.2.1",
     "pretender": "0.6.0",
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.5",

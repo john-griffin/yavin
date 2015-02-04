@@ -2,6 +2,8 @@
 
 @import "foundation";
 
+@import "bourbon";
+
 .unformatted-list {
   list-style: none;
   margin-left: 0;
@@ -25,4 +27,16 @@
 .photo-select {
   position: relative;
   width: 100%;
+}
+
+.photo {
+  max-height: 164px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.stop-row {
+  @include display(flex);
+  @include align-items(center);
 }

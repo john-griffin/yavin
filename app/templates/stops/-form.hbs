@@ -1,8 +1,8 @@
 <div class="row" {{bind-attr class="errorMessage:error"}}>
-  <div class="small-2 columns">
+  <div class="small-3 medium-2 columns">
     <label class="inline right">Stop name</label>
   </div>
-  <div class="small-10 columns">
+  <div class="small-9 medium-10 columns">
     {{input value=model.name placeholder="Stop name" id="stop-name"}}
     {{#if errorMessage}}
       <small class="error">{{errorMessage}}</small>
@@ -13,7 +13,7 @@
 {{outlet}}
 
 <div class="row">
-  <div class="small-10 small-offset-2 columns">
+  <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
     <button {{action 'saveStop' model}} class="save">Save Stop</button>
   </div>
 </div>

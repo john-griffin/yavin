@@ -1,19 +1,19 @@
 <div class="row">
-  <div class="small-2 columns">
+  <div class="small-3 medium-2 columns">
     {{#link-to indexRouteName class="prefix button secondary change-venue"}}
-      Change Venue
+      Switch
     {{/link-to}}
   </div>
-  <div class="small-10 columns">
+  <div class="small-9 medium-10 columns">
     <input type="text" disabled {{bind-attr value=model.name}}>
   </div>
 </div>
 
 <div class="row" {{bind-attr class="errorMessage:error"}}>
-  <div class="small-2 columns">
+  <div class="small-3 medium-2 columns">
     <label class="inline right">Select photo</label>
   </div>
-  <div class="small-10 columns">
+  <div class="small-9 medium-10 columns">
     {{photo-select items=model.photos selected=photoId action='photoSelected'}}
     {{#if errorMessage}}
       <small class="error">{{errorMessage}}</small>
@@ -21,9 +21,9 @@
   </div>
 </div>
 <div class="row">
-  <div class="small-2 columns">
+  <div class="small-3 medium-2 columns">
   </div>
-  <div class="small-10 columns">
+  <div class="small-9 medium-10 columns">
     {{#if model.description}}
       <p>{{model.description}}</p>
     {{/if}}

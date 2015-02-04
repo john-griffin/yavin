@@ -26,8 +26,8 @@ test('visiting stops for a crawl unauthenticated', function() {
     equal(results[0].textContent, "O'Reilly's Irish Pub");
     equal(results[1].textContent, "The Donut Pub");
     equal(results[2].textContent, "Twins Pub");
-    ok(find("button.down").length === 0, 'Page should not have down buttons');
-    ok(find("button.up").length === 0, 'Page should not have up buttons');
+    ok(find("a.down").length === 0, 'Page should not have down buttons');
+    ok(find("a.up").length === 0, 'Page should not have up buttons');
     ok(find(".edit").length === 0, 'Page should not have edit buttons');
   });
 });
@@ -37,8 +37,8 @@ test('visiting stops for a crawl as non owner', function() {
   currentSession().set('id', 2);
   visit('/crawls/1/stops').then(function(){
     equal(find('.stop').length, 3, "Page contains list of stops");
-    ok(find("button.down").length === 0, 'Page should not have down buttons');
-    ok(find("button.up").length === 0, 'Page should not have up buttons');
+    ok(find("a.down").length === 0, 'Page should not have down buttons');
+    ok(find("a.up").length === 0, 'Page should not have up buttons');
     ok(find(".edit").length === 0, 'Page should not have edit buttons');
   });
 });
@@ -47,8 +47,8 @@ test('reorder stops as crawl owner', function() {
   authenticateSession();
   currentSession().set('id', 1);
   visit('/crawls/1/stops').then(function(){
-    click('.button.down:first');
-    click('.button.up:last').then(function() {
+    click('a.down:first');
+    click('a.up:last').then(function() {
       var results = find('.venue-name');
       equal(results[0].textContent, "The Donut Pub");
       equal(results[1].textContent, "Twins Pub");

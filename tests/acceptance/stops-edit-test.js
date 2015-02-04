@@ -31,7 +31,7 @@ test('editing a stop', function() {
           fillIn('#stop-name', 'Stop name changed');
           click('.photo-select:first');
           click('button.save').then(function(){
-            equal(find('.stop-name span')[0].textContent, "Stop name changed");
+            equal(find('.stop-name')[0].textContent, "Stop name changed");
           });
         });
       });

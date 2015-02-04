@@ -40,3 +40,17 @@
   @include display(flex);
   @include align-items(center);
 }
+
+.ember-view {
+  @include display(flex);
+  @include flex-direction(column);
+  min-height: 100%;
+}
+
+.header, .footer {
+  @include flex(none);
+}
+
+.main {
+  @include flex(1);
+}

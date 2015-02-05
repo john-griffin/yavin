@@ -41,6 +41,18 @@
   @include align-items(center);
 }
 
+.admin-section a {
+  width: 56px;
+}
+
+.button.mini {
+  padding-top: 0.625rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.6875rem;
+  padding-left: 0.75rem;
+  font-size: 0.6875rem;
+}
+
 .ember-view {
   @include display(flex);
   @include flex-direction(column);
@@ -54,3 +66,8 @@
 .main {
   @include flex(1 0 auto);
 }
+
+.unformatted-list, .inline-list, .button-group .button {
+  margin-bottom: 0;
+}
+

@@ -1,8 +1,9 @@
 <div class="row">
-  <div class="small-12 columns">
+  <div class="small-10 columns">
     {{#link-to 'stops'}}
-      <h2>{{name}}</h2>
+      <h2>{{title}}</h2>
     {{/link-to}}
   </div>
+  {{yield}}
 </div>
-{{outlet}}
+

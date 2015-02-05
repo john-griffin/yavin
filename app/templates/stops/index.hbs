@@ -1,3 +1,11 @@
+{{#stops-header title=crawl.name}}
+  <div class="small-2 columns">
+    {{#link-to 'stops.new' class="button small add"}}
+      Add stop
+    {{/link-to}}
+  </div>
+{{/stops-header}}
+
 {{#each stop in controller}}
   <div class="stop">
     <div class="row stop-row">

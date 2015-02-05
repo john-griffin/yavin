@@ -53,7 +53,7 @@
   font-size: 0.6875rem;
 }
 
-.ember-view {
+.wrapper {
   @include display(flex);
   @include flex-direction(column);
   height: 100%;

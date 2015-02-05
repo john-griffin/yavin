@@ -8,8 +8,7 @@ export default Ember.Controller.extend({
   actions: {
     saveStop: function(){
       this.set('errorMessage', null); // clear existing errors
-      var venueController = this.get('controllers.' + this.needs[0]);
-      if (venueController.checkValid()) {
+      if (this.get('venueController').checkValid()) {
         if (this.get('isValid')) {
           return true;
         } else {

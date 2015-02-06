@@ -72,6 +72,7 @@
 
 .main {
   @include flex(1 0 auto);
+  min-height: 500px;
 }
 
 .unformatted-list, .inline-list, .button-group .button {

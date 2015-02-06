@@ -1,21 +1,16 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.Controller.extend({
-  hasPhotoId: Ember.computed.notEmpty('photoId'),
-  isValid: Ember.computed.and('hasPhotoId'),
+export default Ember.Controller.extend(EmberValidations.Mixin, {
+  validations: {
+    "photoId": {
+      presence: { message: 'photo must be selected' }
+    }
+  },
   actions: {
     photoSelected: function(photo) {
       this.set('photoId', photo.get('id'));
-      this.set('errorMessage', null);
       return true;
     }
   },
-  checkValid: function() {
-    if (this.get('isValid')) {
-      this.set('errorMessage', null);
-      return true;
-    }
-    this.set('errorMessage', 'Photo must be selected');
-    return false;
-  }
 });

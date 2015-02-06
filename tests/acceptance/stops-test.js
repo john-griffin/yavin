@@ -65,9 +65,10 @@ test('cannot add stop while unauthenticated', function() {
 
 test('cannot add stop as other user', function() {
   authenticateSession();
-  currentSession().set('id', 2);
+  currentSession().set('id', 3);
   visit('/crawls/2/stops/new').then(function(){
-    equal(currentURL(), '/login');
+    equal(currentURL(), '/');
+    equal(find('.alert-box')[0].textContent, 'You do not have permission to access that page.');
   });
 });
 

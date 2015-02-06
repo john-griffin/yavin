@@ -8,7 +8,9 @@ export default Ember.Route.extend(AuthRouteMixin, DataRoute, {
     // for some reason the id sometimes comes back as a string
     var ownerId = parseInt(this.modelFor('crawls/show').get("userId"));
     if (ownerId !== this.get("session.id")) {
-      this.transitionTo('login');
+      var indexController = this.controllerFor('index');
+      indexController.set("isRejected", true);
+      this.transitionTo('index');
     }
     return result;
   },

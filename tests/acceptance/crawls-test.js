@@ -27,7 +27,7 @@ test('creating a crawl', function() {
       fillIn('.city', 'London');
       click('.button.save').then(function() {
         equal(currentURL(), '/crawls/2/stops');
-        equal(find('h2')[0].textContent, "My Crawl 1");
+        equal(find('h2')[0].textContent, "My Crawl 1 in London");
       });
     });
   });
@@ -42,7 +42,7 @@ test('editing a crawl', function() {
     fillIn('.city', 'London');
     click('.button.save').then(function() {
       equal(currentURL(), '/crawls/2/stops');
-      equal(find('h2')[0].textContent, "My Crawl 2");
+      equal(find('h2')[0].textContent, "My Crawl 2 in London");
     });
   });
 });

@@ -16,7 +16,8 @@ export default Ember.Route.extend({
   model: function(params) {
     var venues;
     if (params.query) {
-      params.near = "New York"; // hardcoded for now
+      var city = this.modelFor('crawls.show').get('city');
+      params.near = city;
       venues = this.store.find('fq-venue', params);
     }
     return venues;

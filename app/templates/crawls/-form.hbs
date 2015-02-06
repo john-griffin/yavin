@@ -4,32 +4,36 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="small-3 medium-2 columns">
-    <label class="inline right">Crawl name</label>
+<form {{action 'save' model on="submit"}}>
+  <div class="row">
+    <div class="small-3 medium-2 columns">
+      <label class="inline right">Crawl name</label>
+    </div>
+    <div class="small-9 medium-10 columns">
+      {{input value=model.name placeholder="Crawl name" class="crawl-name"}}
+      {{#if errors.model.name}}
+        <small class="error">{{errors.model.name}}</small>
+      {{/if}}
+    </div>
   </div>
-  <div class="small-9 medium-10 columns">
-    {{input value=model.name placeholder="Crawl name" class="crawl-name"}}
-    {{#if errors.model.name}}
-      <small class="error">{{errors.model.name}}</small>
-    {{/if}}
-  </div>
-</div>
 
-<div class="row">
-  <div class="small-3 medium-2 columns">
-    <label class="inline right">City</label>
+  <div class="row">
+    <div class="small-3 medium-2 columns">
+      <label class="inline right">City</label>
+    </div>
+    <div class="small-9 medium-10 columns">
+      {{input value=model.city placeholder="City" class="city"}}
+      {{#if errors.model.city}}
+        <small class="error">{{errors.model.city}}</small>
+      {{/if}}
+    </div>
   </div>
-  <div class="small-9 medium-10 columns">
-    {{input value=model.city placeholder="City" class="city"}}
-    {{#if errors.model.city}}
-      <small class="error">{{errors.model.city}}</small>
-    {{/if}}
-  </div>
-</div>
 
-<div class="row">
-  <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
-    <button {{action 'save' model}} class="save button" {{bind-attr disabled=isInvalid}}>Save</button>
+  <div class="row">
+    <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
+      <button type="submit" class="save button" {{bind-attr disabled=isInvalid}}>
+        Save
+      </button>
+    </div>
   </div>
-</div>
+</form>

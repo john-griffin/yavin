@@ -1,23 +1,25 @@
 {{stops-header title=crawl.name}}
 
-<div class="row">
-  <div class="small-3 medium-2 columns">
-    <label class="inline right">Stop name</label>
+<form {{action 'saveStop' model on="submit"}}>
+  <div class="row">
+    <div class="small-3 medium-2 columns">
+      <label class="inline right">Stop name</label>
+    </div>
+    <div class="small-9 medium-10 columns">
+      {{input value=model.name placeholder="Stop name" id="stop-name"}}
+      {{#if errors.model.name}}
+        <small class="error">{{errors.model.name}}</small>
+      {{/if}}
+    </div>
   </div>
-  <div class="small-9 medium-10 columns">
-    {{input value=model.name placeholder="Stop name" id="stop-name"}}
-    {{#if errors.model.name}}
-      <small class="error">{{errors.model.name}}</small>
-    {{/if}}
+
+  {{outlet}}
+
+  <hr>
+
+  <div class="row">
+    <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
+      <button class="save" type="submit" {{bind-attr disabled=isAllInvalid}}>Save Stop</button>
+    </div>
   </div>
-</div>
-
-{{outlet}}
-
-<hr>
-
-<div class="row">
-  <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
-    <button {{action 'saveStop' model}} class="save" {{bind-attr disabled=isAllInvalid}}>Save Stop</button>
-  </div>
-</div>
+</form>

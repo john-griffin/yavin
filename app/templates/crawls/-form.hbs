@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h2>New crawl</h2>
+  </div>
+</div>
+
+<div class="row" {{bind-attr class="errorMessage:error"}}>
+  <div class="small-3 medium-2 columns">
+    <label class="inline right">Crawl name</label>
+  </div>
+  <div class="small-9 medium-10 columns">
+    {{input value=model.name placeholder="Crawl name" class="crawl-name"}}
+    {{#if errorMessage}}
+      <small class="error">{{errorMessage}}</small>
+    {{/if}}
+  </div>
+</div>
+
+<div class="row" {{bind-attr class="errorMessage:error"}}>
+  <div class="small-3 medium-2 columns">
+    <label class="inline right">City</label>
+  </div>
+  <div class="small-9 medium-10 columns">
+    {{input value=model.city placeholder="City" class="city"}}
+    {{#if errorMessage}}
+      <small class="error">{{errorMessage}}</small>
+    {{/if}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
+    <button {{action 'save' model}} class="save button">Save</button>
+  </div>
+</div>

@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('login');
   this.resource("crawls", function() {
     this.route("new");
+    this.route("edit", {path: ":crawl_id/edit"});
     this.route("show", {
       path: ":crawl_id"
     }, function() {

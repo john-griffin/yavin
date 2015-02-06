@@ -32,3 +32,17 @@ test('creating a crawl', function() {
     });
   });
 });
+
+
+test('editing a crawl', function() {
+  authenticateSession();
+  currentSession().set('id', 1);
+  visit('/crawls/2/edit').then(function(){
+    fillIn('.crawl-name', 'My Crawl 2');
+    fillIn('.city', 'London');
+    click('.button.save').then(function() {
+      equal(currentURL(), '/crawls/2/stops');
+      equal(find('h2')[0].textContent, "My Crawl 2");
+    });
+  });
+});

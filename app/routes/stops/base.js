@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import AuthRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
+import DataRoute from 'ember-data-route/mixins/data-route';
 
-export default Ember.Route.extend(AuthRouteMixin, {
+export default Ember.Route.extend(AuthRouteMixin, DataRoute, {
   beforeModel: function(){
     // for some reason the id sometimes comes back as a string
     var ownerId = parseInt(this.modelFor('crawls/show').get("userId"));

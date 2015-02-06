@@ -76,6 +76,7 @@ export default function(){
       "crawl": {
         "id": 2,
         "name": "Monopoly",
+        "city": "London",
         "user_id": 1,
         "links": {
           "stops": "/api/v1/stops?crawl_id=1"

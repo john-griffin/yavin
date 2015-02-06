@@ -29,6 +29,13 @@
   width: 100%;
 }
 
+.photo-select img {
+  height: 89px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
 .photo {
   max-height: 164px;
   width: 100%;

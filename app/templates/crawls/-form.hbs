@@ -10,8 +10,8 @@
   </div>
   <div class="small-9 medium-10 columns">
     {{input value=model.name placeholder="Crawl name" class="crawl-name"}}
-    {{#if errorMessage}}
-      <small class="error">{{errorMessage}}</small>
+    {{#if errors.model.name}}
+      <small class="error">{{errors.model.name}}</small>
     {{/if}}
   </div>
 </div>
@@ -22,8 +22,8 @@
   </div>
   <div class="small-9 medium-10 columns">
     {{input value=model.city placeholder="City" class="city"}}
-    {{#if errorMessage}}
-      <small class="error">{{errorMessage}}</small>
+    {{#if errors.model.city}}
+      <small class="error">{{errors.model.city}}</small>
     {{/if}}
   </div>
 </div>

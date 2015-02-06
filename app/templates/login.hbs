@@ -1,10 +1,27 @@
-<p>
-  {{errorMessage}}
-</p>
 <form {{action 'authenticate' on='submit'}}>
-  <label for="identification">Login</label>
-  {{input value=identification placeholder='Enter Login' class='email'}}
-  <label for="password">Password</label>
-  {{input value=password placeholder='Enter Password' type='password' class='password'}}
-  <button type="submit" class='login'>Login</button>
+  <p>
+    {{errorMessage}}
+  </p>
+  <div class="row">
+    <div class="small-3 medium-2 columns">
+      <label class="inline right">Login</label>
+    </div>
+    <div class="small-6 medium-8 columns left">
+      {{input value=identification placeholder='Enter Login' class='email'}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-3 medium-2 columns">
+      <label class="inline right">Password</label>
+    </div>
+    <div class="small-6 medium-8 columns left">
+      {{input value=password placeholder='Enter Password' type='password' class='password'}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
+      <button type="submit" class='login'>Login</button>
+    </div>
+  </div>
 </form>

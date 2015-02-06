@@ -4,13 +4,16 @@ export default Ember.Route.extend({
   model: function(params) {
     return this.store.fetch('fq-venue', params.venue_id);
   },
-  resetController: function (controller, isExiting) {
-    if (isExiting) {
-      controller.set('photoId', null);
+  afterModel: function(venue) {
+    var stop = this.modelFor(this.get('stopRoute'));
+    // venue has changed so reset photo fields
+    if (stop.get("foursquareId") !== venue.get('id')) {
+      stop.clearPhotoFields();
     }
+    this.set('stop', stop);
   },
   setupController: function(controller, post) {
-    controller.set('photoId', this.get('stop.photoId'));
+    controller.set('stop', this.get('stop'));
     this._super(controller, post);
   }
 });

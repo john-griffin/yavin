@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   categories: DS.hasMany('fq-category'),
@@ -42,5 +43,8 @@ export default DS.Model.extend({
   verified: DS.attr('boolean', { defaultValue: false }),
   like: DS.attr('boolean', { defaultValue: false }),
   dislike: DS.attr('boolean', { defaultValue: false }),
-  ok: DS.attr('boolean', { defaultValue: false })
+  ok: DS.attr('boolean', { defaultValue: false }),
+  icon: Ember.computed('categories', function() {
+    return this.get("categories.firstObject.iconUrl");
+  })
 });

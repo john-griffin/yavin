@@ -13,7 +13,8 @@
       {{#each venue in model}}
         <li>
           {{#link-to showRouteName venue.id class='venue-link'}}
-            {{venue.name}}
+            <img {{bind-attr src=venue.icon}} class='venue-icon'>
+            {{venue.name}} <small>{{venue.location.formattedAddress}}</small>
           {{/link-to}}
         </li>
       {{/each}}

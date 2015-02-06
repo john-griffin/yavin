@@ -31,6 +31,7 @@ Router.map(function() {
       });
     });
   });
+  this.route("fourOhFour", { path: "*path"});
 });
 
 export default Router;

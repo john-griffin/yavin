@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  deactivate: function() {
+  activate: function() {
     var controller = this.controllerFor('index');
-    controller.set('isRejected', false);
-    controller.set('isNotFound', false);
+    controller.set('isNotFound', true);
+    this.transitionTo('index');
   }
 });

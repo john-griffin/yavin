@@ -8,53 +8,63 @@
   </div>
 {{/stops-header}}
 
-{{#each stop in controller}}
-  <div class="stop">
-    <div class="row stop-row">
-      <div class="small-3 columns">
-        <img {{bind-attr src=stop.photoUrl}} class="photo">
+{{#if controller.isEmpty}}
+  <div class="row stop-row">
+    <div class="small-12 columns">
+      <div class="alert-box secondary">
+        There are no stops in this crawl yet. Why don't you add a few?
       </div>
-      <div class="small-8 columns">
-        <h3 class="stop-name">{{stop.name}}</h3>
-        <h4 class="venue-name">{{stop.venueName}}</h4>
-        {{#if stop.description}}
-          <p>{{stop.description}}</p>
-        {{/if}}
-        <ul class="unformatted-list">
-          {{#each line in stop.location}}
-            <li>{{line}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      {{#if controller.isOwner}}
-        <div class="small-1 columns admin-section">
-          <ul class="button-group right">
-            <li>
-              <a {{action 'delete' stop}} class='secondary mini button delete'>
-                delete
-              </a>
-            </li>
-            <li>
-              {{#link-to 'venues.edit' stop class='secondary mini button edit'}}
-                edit
-              {{/link-to}}
-            </li>
-            <li>
-              <a {{action 'moveStop' stop 'up'}} class='secondary mini button up'>
-                {{fa-icon "fa-chevron-up"}}
-              </a>
-            </li>
-            <li>
-              <a {{action 'moveStop' stop 'down'}} class='secondary mini button down'>
-                {{fa-icon "fa-chevron-down"}}
-              </a>
-            </li>
-          </ul>
-        </div>
-      {{/if}}
-    </div>
-    <div class="row">
-      <hr>
     </div>
   </div>
-{{/each}}
+{{else}}
+  {{#each stop in controller}}
+    <div class="stop">
+      <div class="row stop-row">
+        <div class="small-3 columns">
+          <img {{bind-attr src=stop.photoUrl}} class="photo">
+        </div>
+        <div class="small-8 columns">
+          <h3 class="stop-name">{{stop.name}}</h3>
+          <h4 class="venue-name">{{stop.venueName}}</h4>
+          {{#if stop.description}}
+            <p>{{stop.description}}</p>
+          {{/if}}
+          <ul class="unformatted-list">
+            {{#each line in stop.location}}
+              <li>{{line}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        {{#if controller.isOwner}}
+          <div class="small-1 columns admin-section">
+            <ul class="button-group right">
+              <li>
+                <a {{action 'delete' stop}} class='secondary mini button delete'>
+                  delete
+                </a>
+              </li>
+              <li>
+                {{#link-to 'venues.edit' stop class='secondary mini button edit'}}
+                  edit
+                {{/link-to}}
+              </li>
+              <li>
+                <a {{action 'moveStop' stop 'up'}} class='secondary mini button up'>
+                  {{fa-icon "fa-chevron-up"}}
+                </a>
+              </li>
+              <li>
+                <a {{action 'moveStop' stop 'down'}} class='secondary mini button down'>
+                  {{fa-icon "fa-chevron-down"}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        {{/if}}
+      </div>
+      <div class="row">
+        <hr>
+      </div>
+    </div>
+  {{/each}}
+{{/if}}

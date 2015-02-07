@@ -6,5 +6,6 @@ export default Ember.ArrayController.extend({
   isOwner: Ember.computed('session.id', function(){
     return this.get("session.id") === this.get('crawl.userId');
   }),
+  isEmpty: Ember.computed.empty('model'),
   sortProperties: ['rowOrder']
 });

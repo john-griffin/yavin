@@ -21,7 +21,7 @@ test('visiting /login', function() {
     fillIn('.email', 'j@j.com');
     fillIn('.password', 'C0mplexP4ss');
     click('button.login').then(function() {
-      equal(find('.top-bar-section a')[0].textContent, "Logout");
+      equal(find('.top-bar-section a')[0].textContent, "j@j.com - Logout");
     });
   });
 });

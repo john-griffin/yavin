@@ -91,3 +91,10 @@
   height: 16px;
   width: 16px;
 }
+
+input.foursquare-search, input.foursquare-search:focus {
+  background-image: url('/assets/images/foursquare.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}

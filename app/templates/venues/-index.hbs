@@ -10,7 +10,9 @@
 <div class="row">
   <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
     <ul class="side-nav venue-list">
-      {{#if model}}
+      {{#if noResults}}
+        <li><a>No results, try being less specific.</a></li>
+      {{else}}
         {{#each venue in model}}
           <li>
             {{#link-to showRouteName venue.id class='venue-link'}}
@@ -19,8 +21,6 @@
             {{/link-to}}
           </li>
         {{/each}}
-      {{else}}
-        <li><a>No results, try being less specific.</a></li>
       {{/if}}
     </ul>
   </div>

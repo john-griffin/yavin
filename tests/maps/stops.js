@@ -84,6 +84,9 @@ export default function(){
       }
     }];
   });
+  this.get('/api/v1/crawls', function(){
+    return [200, {"Content-Type": "application/json"}, {"crawls": []}];
+  });
   this.get('/api/v1/stops', function(){
     return [200, {"Content-Type": "application/json"}, { "stops": stops }];
   });

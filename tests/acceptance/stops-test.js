@@ -3,6 +3,7 @@ import startApp from '../helpers/start-app';
 import Pretender from '../helpers/pretender';
 import stopMaps from "../maps/stops";
 import venueMaps from "../maps/foursquare-venues";
+import crawlMaps from "../maps/crawls";
 
 var application, server;
 

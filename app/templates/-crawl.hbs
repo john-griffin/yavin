@@ -1,0 +1,12 @@
+<div class="row">
+  {{#link-to 'crawls.show' crawl class="small-12 columns crawl-row"}}
+    <div class="number">
+      <h1>{{crawl.stopCount}}</h1>
+      <p class="stops-label">stops</p>
+    </div>
+    <div class="stop-info">
+      <h5 class="crawl-name">{{crawl.name}}</h5>
+      <span>in {{crawl.city}}</span>
+    </div>
+  {{/link-to}}
+</div>

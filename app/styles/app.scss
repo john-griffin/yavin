@@ -98,3 +98,39 @@ input.foursquare-search, input.foursquare-search:focus {
   background-repeat: no-repeat;
   background-position: right center;
 }
+
+.number {
+  background-color: #333;
+  color: #EEEEEE;
+  width: 85px;
+  text-align: center;
+}
+
+.number h1 {
+  margin: 0;
+  color: #EEEEEE;
+}
+
+.crawl-row {
+  @include display(flex);
+  @include align-items(center);
+  margin-bottom: 20px;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  &:hover {
+    color: #222222;
+    background-color: #F6F6F6;
+  }
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+.stops-label {
+  margin-bottom: 10px;
+}
+
+.stop-info {
+  margin-left: 20px;
+}

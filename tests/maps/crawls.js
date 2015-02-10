@@ -4,6 +4,7 @@ var userCrawls = [{
   "city": "London",
   "user_id": 2,
   "featured": false,
+  "stopCount": 2,
   "links": {
     "stops": "/api/v1/stops?crawl_id=56"
   }
@@ -13,6 +14,7 @@ var userCrawls = [{
   "city": "New York",
   "user_id": 2,
   "featured": false,
+  "stopCount": 2,
   "links": {
     "stops": "/api/v1/stops?crawl_id=89"
   }
@@ -24,6 +26,7 @@ var crawls = [{
   "city": "London",
   "user_id": 15,
   "featured": true,
+  "stopCount": 2,
   "links": {
     "stops": "/api/v1/stops?crawl_id=2"
   }
@@ -33,6 +36,7 @@ var crawls = [{
   "city": "London",
   "user_id": 3,
   "featured": true,
+  "stopCount": 2,
   "links": {
     "stops": "/api/v1/stops?crawl_id=6"
   }
@@ -42,6 +46,7 @@ var crawls = [{
   "city": "New York",
   "user_id": 12,
   "featured": true,
+  "stopCount": 2,
   "links": {
     "stops": "/api/v1/stops?crawl_id=10"
   }

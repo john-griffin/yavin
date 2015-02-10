@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="small-12 columns crawl-row">
+    {{#link-to 'crawls.show' crawl}}
+      <div class="number">
+        <h1>{{crawl.stopCount}}</h1>
+        <p class="stops-label">stops</p>
+      </div>
+      <div class="stop-info">
+        <h5 class="crawl-name">{{crawl.name}}</h5>
+        <span>in {{crawl.city}}</span>
+      </div>
+    {{/link-to}}
+    <div class="crawl-actions">
+      {{#if confirmDelete}}
+        <small class="confirm-text">Are you sure?</small>
+        <div class="crawl-buttons">
+          <a {{action 'delete' crawl}} class='secondary mini button delete-confirm'>
+            delete
+          </a>
+          <a {{action 'cancel'}} class='secondary mini button cancel'>
+            cancel
+          </a>
+        </div>
+        <div>&nbsp;</div>
+      {{else}}
+        <div class="crawl-buttons">
+          <a {{action 'tryDelete' }} class='secondary mini button delete'>
+            delete
+          </a>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  actions: {
+    deleteCrawl: function(crawl) {
+      crawl.destroyRecord();
+    }
+  },
   model: function(){
     var _this = this;
     return this.store.find('crawl').catch(function(){

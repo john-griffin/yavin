@@ -94,4 +94,7 @@ export default function(){
   this.get('/api/v1/stops', function(){
     return [200, {"Content-Type": "application/json"}, { "stops": [] }];
   });
+  this.delete('/api/v1/crawls/56', function() {
+    return [204, {"Content-Type": "application/json"}, {}];
+  })
 }

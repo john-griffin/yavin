@@ -35,3 +35,15 @@ test('visiting / shows featured and owned crawls', function() {
     equal(find('.owned-crawls .crawl-name')[0].textContent, "My crawl");
   });
 });
+
+test('can delete a crawl', function() {
+  authenticateSession();
+  currentSession().set('id', 2);
+  visit('/').then(function() {
+    click('.owned-crawls .crawl-row:first .delete').then(function(){
+      click('.owned-crawls .crawl-row:first .delete-confirm').then(function(){
+        equal(find('.owned-crawls .crawl-name').length, 1, "crawl deleted");
+      })
+    })
+  });
+});

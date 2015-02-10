@@ -104,6 +104,7 @@ input.foursquare-search, input.foursquare-search:focus {
   color: #EEEEEE;
   width: 85px;
   text-align: center;
+  @include flex(none);
 }
 
 .number h1 {
@@ -125,6 +126,19 @@ input.foursquare-search, input.foursquare-search:focus {
   &:active, &:focus {
     outline: none;
   }
+  a {
+    @include display(flex);
+    @include align-items(center);
+    @include flex(auto);
+  }
+  .crawl-actions {
+    .button {
+      margin-bottom: 0;
+    }
+    .crawl-buttons {
+      @include display(flex);
+    }
+  }
 }
 
 .stops-label {
@@ -133,4 +147,5 @@ input.foursquare-search, input.foursquare-search:focus {
 
 .stop-info {
   margin-left: 20px;
+  @include flex(auto);
 }

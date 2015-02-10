@@ -27,14 +27,14 @@
   <div class="small-12 medium-6 columns featured-crawls">
     <h3>Featured</h3>
     {{#each crawl in featuredCrawls}}
-      {{partial 'crawl'}}
+      {{crawl-item crawl=crawl}}
     {{/each}}
   </div>
 
   <div class="small-12 medium-6 columns owned-crawls">
     <h3>Owned</h3>
     {{#each crawl in ownedCrawls}}
-      {{partial 'crawl'}}
+      {{crawl-item crawl=crawl action='deleteCrawl'}}
     {{/each}}
   </div>
 </div>

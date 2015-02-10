@@ -43,7 +43,7 @@ test('can delete a crawl', function() {
     click('.owned-crawls .crawl-row:first .delete').then(function(){
       click('.owned-crawls .crawl-row:first .delete-confirm').then(function(){
         equal(find('.owned-crawls .crawl-name').length, 1, "crawl deleted");
-      })
-    })
+      });
+    });
   });
 });

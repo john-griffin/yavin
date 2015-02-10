@@ -96,5 +96,5 @@ export default function(){
   });
   this.delete('/api/v1/crawls/56', function() {
     return [204, {"Content-Type": "application/json"}, {}];
-  })
+  });
 }

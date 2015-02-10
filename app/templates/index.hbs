@@ -33,8 +33,18 @@
 
   <div class="small-12 medium-6 columns owned-crawls">
     <h3>Owned</h3>
-    {{#each crawl in ownedCrawls}}
-      {{crawl-item crawl=crawl action='deleteCrawl' deleteable=true}}
-    {{/each}}
+    {{#if emptyOwnedCrawls}}
+      <div class="row">
+        <div class="small-12 columns crawl-row">
+          <div class="alert-box secondary">
+            You haven't created any crawls yet. Why don't you try to add one?
+          </div>
+        </div>
+      </div>
+    {{else}}
+      {{#each crawl in ownedCrawls}}
+        {{crawl-item crawl=crawl action='deleteCrawl' deleteable=true}}
+      {{/each}}
+    {{/if}}
   </div>
 </div>

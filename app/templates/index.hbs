@@ -34,7 +34,7 @@
   <div class="small-12 medium-6 columns owned-crawls">
     <h3>Owned</h3>
     {{#each crawl in ownedCrawls}}
-      {{crawl-item crawl=crawl action='deleteCrawl'}}
+      {{crawl-item crawl=crawl action='deleteCrawl' deleteable=true}}
     {{/each}}
   </div>
 </div>

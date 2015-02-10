@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  deletable: false,
   confirmDelete: false,
   actions: {
     tryDelete: function(){

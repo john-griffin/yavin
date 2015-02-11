@@ -28,7 +28,9 @@
     <div class="small-12 medium-6 columns featured-crawls">
       <h3>Featured Crawls</h3>
       {{#each crawl in featuredCrawls}}
-        {{crawl-item crawl=crawl}}
+        <div class="row">
+          {{crawl-item crawl=crawl classNames='small-12 columns'}}
+        </div>
       {{/each}}
     </div>
     <div class="small-12 medium-6 columns owned-crawls">
@@ -43,7 +45,9 @@
         </div>
       {{else}}
         {{#each crawl in ownedCrawls}}
-          {{crawl-item crawl=crawl action='deleteCrawl' deleteable=true}}
+          <div class="row">
+            {{crawl-item crawl=crawl action='deleteCrawl' deleteable=true classNames='small-12 columns'}}
+          </div>
         {{/each}}
       {{/if}}
     </div>
@@ -52,19 +56,7 @@
       <h3>Featured Crawls</h3>
       <ul class="small-block-grid-1 medium-block-grid-2">
         {{#each crawl in featuredCrawls}}
-          <li class="crawl-row">
-            {{#link-to 'crawls.show' crawl}}
-              <div class="number">
-                <h1>{{crawl.stopCount}}</h1>
-                <p class="stops-label">stops</p>
-              </div>
-              <div class="stop-info">
-                <h5 class="crawl-name">{{crawl.name}}</h5>
-                <span>in {{crawl.city}}</span>
-              </div>
-            {{/link-to}}
-          </li>
-
+          {{crawl-item crawl=crawl tagName='li'}}
         {{/each}}
       </ul>
     </div>

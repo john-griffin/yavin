@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['crawl-row'],
   deletable: false,
   confirmDelete: false,
   actions: {

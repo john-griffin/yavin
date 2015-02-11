@@ -112,7 +112,7 @@ input.foursquare-search, input.foursquare-search:focus {
   color: #EEEEEE;
 }
 
-.crawl-row {
+.crawl-row, li.crawl-row {
   @include display(flex);
   @include align-items(center);
   margin-bottom: 20px;
@@ -127,6 +127,7 @@ input.foursquare-search, input.foursquare-search:focus {
     outline: none;
   }
   a {
+    color: #222222;
     @include display(flex);
     @include align-items(center);
     @include flex(auto);

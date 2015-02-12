@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  isRejected: false,
   queryParams: {
     query: {
       refreshModel: true
@@ -11,7 +12,13 @@ export default Ember.Route.extend({
       // loading state would sometimes make the search bar flash
       // so the action is interrupted here to prevent the transition.
       return false;
+    },
+    error: function() {
+      this.controller.set('isRejected', true);
     }
+  },
+  deactivate: function() {
+    this.controller.set('isRejected', false);
   },
   model: function(params) {
     var venues;

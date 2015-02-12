@@ -12,7 +12,8 @@ export default DS.RESTAdapter.extend({
     if (Ember.isEmpty(hash.data)) {
       hash.data = {};
     }
-    hash.data.oauth_token = 'YWXROQSSTW5Q2DEF2YU3HS5QZHKEACSC2HBIFX1Z3BRG5IFM';
+    hash.data.client_id = 'RMH0VXGREBSSFZI3120MJ1HE3CXWU5ZDHO3KMGCKZFF01MYQ';
+    hash.data.client_secret = 'I4D0APFM3OV50RAHD2YW0E3NSUADGTXO25KC2EL2NIDHVL0N';
     hash.data.v = '20150113';
     return this._super(url, type, hash);
   },

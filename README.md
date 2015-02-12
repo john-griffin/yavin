@@ -1,7 +1,21 @@
 # Yavin
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+The Ember frontend to [CrawlsofLondon.com](http://www.crawlsoflondon.com). The 
+source code for the backend API, written in Ruby on Rails can be found 
+[here](https://github.com/john-griffin/endor).
+
+## Highlights
+
+* Admin mode allows a user to create crawls with stops. All crawls are public 
+but only the owner of the crawl can edit it.
+* Stops are added using Foursquare integration to search for venues. Uses a 
+custom Ember Data adapter and serializer.
+* Photo picker component allows for quick customisation of each stop.
+* Fully acceptance tested with stubbed out API requests using the excellent 
+[pretender](https://github.com/trek/pretender). Tests can be run by following 
+the steps bellow.
+* Responsive styling using Foundation, Bourbon and a little 
+[flexbox](http://caniuse.com/flexbox). All written in SASS.
 
 ## Prerequisites
 
@@ -25,10 +39,6 @@ You will need the following things properly installed on your computer.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
 ### Running Tests
 
 * `ember test`
@@ -41,13 +51,5 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+Deployed to Heroku using the 
+[Ember CLI buildpack](https://github.com/tonycoco/heroku-buildpack-ember-cli).

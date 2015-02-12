@@ -7,5 +7,6 @@ export default Ember.ArrayController.extend({
     return this.get("session.id") === this.get('crawl.userId');
   }),
   isEmpty: Ember.computed.empty('model'),
+  stops: Ember.computed.filterBy('arrangedContent', 'isNew', false),
   sortProperties: ['rowOrder']
 });

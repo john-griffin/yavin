@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend(Ember.SortableMixin, {
   needs: ['crawls/show'],
   crawl: Ember.computed.alias('controllers.crawls/show'),
   isOwner: Ember.computed('session.id', 'crawl.userId', function(){

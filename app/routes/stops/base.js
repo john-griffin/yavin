@@ -24,6 +24,7 @@ export default Ember.Route.extend(AuthRouteMixin, DataRoute, {
       stop.set('venueName',    fqVenue.get('name'));
       stop.set('description',  fqVenue.get('description'));
       stop.set('location',     fqVenue.get('location').formattedAddress);
+      stop.set('point',        fqVenue.get('point'));
       stop.set('foursquareId', fqVenue.get('id'));
       stop.save().then(function(){
         _this.transitionTo('stops');

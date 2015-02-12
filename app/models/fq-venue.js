@@ -44,6 +44,10 @@ export default DS.Model.extend({
   like: DS.attr('boolean', { defaultValue: false }),
   dislike: DS.attr('boolean', { defaultValue: false }),
   ok: DS.attr('boolean', { defaultValue: false }),
+  point: Ember.computed('location', function(){
+    var location = this.get('location');
+    return [location.lat, location.lng];
+  }),
   icon: Ember.computed('categories', function() {
     return this.get("categories.firstObject.iconUrl");
   })

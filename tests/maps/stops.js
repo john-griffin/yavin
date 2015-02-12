@@ -14,6 +14,7 @@ var stops = [
       "New York, NY 10001",
       "United States"
     ],
+    "point":[51.5119171699677,-0.127148227717328],
     "foursquare_id": "4259be00f964a520ef201fe3"
   },
   {
@@ -31,6 +32,7 @@ var stops = [
       "New York, NY 10011",
       "United States"
     ],
+    "point":[51.5119171699677,-0.127148227717328],
     "foursquare_id": "459b8681f964a5208c401fe3"
   },
   {
@@ -48,6 +50,7 @@ var stops = [
       "New York, NY 10001",
       "United States"
     ],
+    "point":[51.5119171699677,-0.127148227717328],
     "foursquare_id": "4ad2b22af964a52081e220e3"
   }
 ];
@@ -67,6 +70,7 @@ var galwayStop = {
     "New York, NY 10016",
     "United States"
   ],
+  "point":[51.5119171699677,-0.127148227717328],
   "foursquare_id": "48821a51f964a52033511fe3"
 };
 

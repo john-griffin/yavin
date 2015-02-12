@@ -18,6 +18,7 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   foursquareId: DS.attr('string'),
   location: DS.attr('raw'),
+  point: DS.attr('raw'),
   venueName: DS.attr('string'),
 
   clearPhotoFields: function() {

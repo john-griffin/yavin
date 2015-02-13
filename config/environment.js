@@ -21,6 +21,8 @@ module.exports = function(environment) {
 
   ENV.FS_API_HOST = 'https://api.foursquare.com';
   ENV.FS_API_NS   = 'v2';
+  ENV.FS_API_CI   = process.env.FS_API_CI;
+  ENV.FS_API_CS   = process.env.FS_API_CS;
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

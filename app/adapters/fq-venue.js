@@ -12,8 +12,8 @@ export default DS.RESTAdapter.extend({
     if (Ember.isEmpty(hash.data)) {
       hash.data = {};
     }
-    hash.data.client_id = 'RMH0VXGREBSSFZI3120MJ1HE3CXWU5ZDHO3KMGCKZFF01MYQ';
-    hash.data.client_secret = 'I4D0APFM3OV50RAHD2YW0E3NSUADGTXO25KC2EL2NIDHVL0N';
+    hash.data.client_id     = config.FS_API_CI;
+    hash.data.client_secret = config.FS_API_CS;
     hash.data.v = '20150113';
     return this._super(url, type, hash);
   },

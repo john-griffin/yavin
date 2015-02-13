@@ -4,6 +4,9 @@ export default Ember.Component.extend({
   classNames: ['crawl-row'],
   deletable: false,
   confirmDelete: false,
+  canUseImage: Ember.computed('crawl.imageUrl', 'deleteable', function(){
+    return this.get('crawl.imageUrl') && !this.get('deleteable');
+  }),
   actions: {
     tryDelete: function(){
       this.set('confirmDelete', true);

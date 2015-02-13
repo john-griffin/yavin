@@ -105,6 +105,7 @@ input.foursquare-search, input.foursquare-search:focus {
   width: 85px;
   text-align: center;
   @include flex(none);
+  height: 96px;
 }
 
 .number h1 {
@@ -150,4 +151,13 @@ input.foursquare-search, input.foursquare-search:focus {
 .stop-info {
   margin-left: 20px;
   @include flex(auto);
+}
+
+.stop-info.image {
+  margin-left: 0;
+  img {
+    height: 96px;
+    object-fit: cover;
+    overflow: hidden;
+  }
 }

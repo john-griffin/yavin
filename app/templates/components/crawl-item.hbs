@@ -3,10 +3,16 @@
     <h1>{{crawl.stopCount}}</h1>
     <p class="stops-label">stops</p>
   </div>
-  <div class="stop-info">
-    <h5 class="crawl-name">{{crawl.name}}</h5>
-    <span>in {{crawl.city}}</span>
-  </div>
+  {{#if canUseImage}}
+    <div class="stop-info image">
+      <img {{bind-attr src=crawl.imageUrl}}>
+    </div>
+  {{else}}
+    <div class="stop-info">
+      <h5 class="crawl-name">{{crawl.name}}</h5>
+      <span>in {{crawl.city}}</span>
+    </div>
+  {{/if}}
 {{/link-to}}
 {{#if deleteable}}
   <div class="crawl-actions">

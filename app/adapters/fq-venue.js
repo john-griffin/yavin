@@ -14,7 +14,7 @@ export default DS.RESTAdapter.extend({
     }
     hash.data.client_id     = config.FS_API_CI;
     hash.data.client_secret = config.FS_API_CS;
-    hash.data.v = '20150113';
+    hash.data.v             = '20150113';
     return this._super(url, type, hash);
   },
   pathForType: function(type) {

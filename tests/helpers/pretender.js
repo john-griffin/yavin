@@ -1,4 +1,5 @@
 import Pretender from 'pretender';
+import QUnit from 'qunit';
 
 var pretender;
 export default function(assert) {

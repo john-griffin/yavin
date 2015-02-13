@@ -5,6 +5,7 @@ export default DS.Model.extend({
   userId: DS.attr('number'),
   stopCount: DS.attr('number'),
   city: DS.attr('string'),
+  imageUrl: DS.attr('string'),
   featured: DS.attr('boolean'),
   name: DS.attr('string')
 });

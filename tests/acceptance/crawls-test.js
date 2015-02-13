@@ -25,6 +25,7 @@ test('creating a crawl', function() {
       equal(currentURL(), '/crawls/new');
       fillIn('.crawl-name', 'My Crawl 1');
       fillIn('.city', 'London');
+      fillIn('.image-url', 'foo.jpg');
       click('.button.save').then(function() {
         equal(currentURL(), '/crawls/2/stops');
         equal(find('h2')[0].textContent, "My Crawl 1 in London");

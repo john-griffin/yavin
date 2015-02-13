@@ -14,6 +14,7 @@ var userCrawls = [{
   "city": "New York",
   "user_id": 2,
   "featured": false,
+  "imageUrl": 'foo.jpg',
   "stopCount": 2,
   "links": {
     "stops": "/api/v1/stops?crawl_id=89"

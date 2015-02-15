@@ -24,6 +24,21 @@
   color: #007095;
 }
 
+ul.photo-select-grid {
+  &.empty {
+    @include block-grid(1);
+    li {
+      padding-bottom: 0;
+    }
+  }
+  @media #{$small-up} {
+    @include block-grid(3);
+  }
+  @media #{$medium-up} {
+    @include block-grid(6);
+  }
+}
+
 .photo-select {
   position: relative;
   width: 100%;

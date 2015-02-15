@@ -1,5 +1,4 @@
-{{#if photos}}
-<ul class="small-block-grid-3 medium-block-grid-6">
+<ul {{bind-attr class=":photo-select-grid isEmpty:empty"}}>
   {{#each photo in photos}}
     <li {{bind-attr class="photo.isSelected:selected"}}>
       <div class="photo-select" {{action 'click' photo}}>
@@ -11,10 +10,11 @@
         {{/if}}
       </div>
     </li>
+  {{else}}
+    <li>
+      <small class="error">
+        There are no photos available for this venue. Please select another venue.
+      </small>
+    </li>
   {{/each}}
 </ul>
-{{else}}
-  <small class="error">
-    There are no photos available for this venue. Please select another venue.
-  </small>
-{{/if}}

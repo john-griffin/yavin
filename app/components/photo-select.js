@@ -9,6 +9,7 @@ export default Ember.Component.extend({
       return item;
     });
   }),
+  isEmpty: Ember.computed.empty('photos'),
   actions: {
     click: function(photo) {
       this.set('selected', photo.get('id'));

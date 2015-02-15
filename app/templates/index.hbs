@@ -35,7 +35,11 @@
     </div>
     <div class="small-12 medium-6 columns owned-crawls">
       <h3>Your Crawls</h3>
-      {{#if emptyOwnedCrawls}}
+      {{#each crawl in ownedCrawls}}
+        <div class="row">
+          {{crawl-item crawl=crawl action='deleteCrawl' deleteable=true classNames='small-12 columns'}}
+        </div>
+      {{else}}
         <div class="row">
           <div class="small-12 columns crawl-row">
             <div class="alert-box secondary">
@@ -43,13 +47,7 @@
             </div>
           </div>
         </div>
-      {{else}}
-        {{#each crawl in ownedCrawls}}
-          <div class="row">
-            {{crawl-item crawl=crawl action='deleteCrawl' deleteable=true classNames='small-12 columns'}}
-          </div>
-        {{/each}}
-      {{/if}}
+      {{/each}}
     </div>
   {{else}}
     <div class="small-12 columns featured-crawls">

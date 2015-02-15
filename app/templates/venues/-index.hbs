@@ -18,18 +18,18 @@
 <div class="row">
   <div class="small-9 small-offset-3 medium-10 medium-offset-2 columns">
     <ul class="side-nav venue-list">
-      {{#if noResults}}
-        <li><a>No results, try being less specific.</a></li>
+      {{#each venue in model}}
+        <li>
+          {{#link-to showRouteName venue.id class='venue-link'}}
+            <img {{bind-attr src=venue.icon}} class='venue-icon'>
+            {{venue.name}} <small>{{venue.location.formattedAddress}}</small>
+          {{/link-to}}
+        </li>
       {{else}}
-        {{#each venue in model}}
-          <li>
-            {{#link-to showRouteName venue.id class='venue-link'}}
-              <img {{bind-attr src=venue.icon}} class='venue-icon'>
-              {{venue.name}} <small>{{venue.location.formattedAddress}}</small>
-            {{/link-to}}
-          </li>
-        {{/each}}
-      {{/if}}
+        {{#if query}}
+          <li><a>No results, try being less specific.</a></li>
+        {{/if}}
+      {{/each}}
     </ul>
   </div>
 </div>

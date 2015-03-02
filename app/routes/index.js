@@ -7,9 +7,8 @@ export default Ember.Route.extend({
     }
   },
   model: function(){
-    var _this = this;
-    return this.store.find('crawl').catch(function(){
-      _this.controllerFor('index').set('isNotFound', true);
+    return this.store.find('crawl').catch(() => {
+      this.controllerFor('index').set('isNotFound', true);
       return [];
     });
   },

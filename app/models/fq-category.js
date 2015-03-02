@@ -8,6 +8,6 @@ export default DS.Model.extend({
   icon: DS.attr('raw'),
   primary: DS.attr('boolean', { defaultValue: false }),
   iconUrl: Ember.computed('icon', function(){
-    return this.get("icon")["prefix"] + "bg_32" + this.get("icon")["suffix"];
+    return `${this.get("icon").prefix}bg_32${this.get("icon").suffix}`;
   })
 });

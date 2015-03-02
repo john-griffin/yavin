@@ -11,7 +11,7 @@ export default DS.Model.extend({
   photoSuffix: DS.attr('string'),
 
   photoUrl: Ember.computed('photoPrefix', 'photoSuffix', function(){
-    return this.get('photoPrefix') + 'width300' + this.get('photoSuffix');
+    return `${this.get('photoPrefix')}width300${this.get('photoSuffix')}`;
   }),
 
   // venue data

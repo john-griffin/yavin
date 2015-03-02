@@ -19,7 +19,7 @@ export default Ember.Route.extend(AuthRouteMixin, DataRoute, {
   }),
   actions: {
     saveStop: function(stop){
-      var fqVenue = this.modelFor('venues/'+this.get('actionName')+'/show');
+      var fqVenue = this.modelFor(`venues/${this.get('actionName')}/show`);
       stop.set('venueName',    fqVenue.get('name'));
       stop.set('description',  fqVenue.get('description'));
       stop.set('location',     fqVenue.get('location').formattedAddress);

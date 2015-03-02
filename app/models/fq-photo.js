@@ -11,6 +11,6 @@ export default DS.Model.extend({
   prefix: DS.attr('string'),
   suffix: DS.attr('string'),
   url: Ember.computed('prefix', 'suffix', function(){
-    return this.get('prefix') + 'width300' + this.get('suffix');
+    return `${this.get('prefix')}width300${this.get('suffix')}`;
   })
 });
